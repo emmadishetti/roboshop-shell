@@ -1,33 +1,33 @@
-echo “>>>>>>>>>>> Catalogue Service <<<<<<<<<”
+echo ">>>>>>>>>>> Catalogue Service <<<<<<<<<"
 cp catalogue.service /etc/systemd/system/catalogue.service
 
-echo “>>>>>>>>>>> ctreate Mongo Repo  <<<<<<<<<”
+echo ">>>>>>>>>>> ctreate Mongo Repo  <<<<<<<<<"
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 
-echo “>>>>>>>>>>> Download nodejs Repos <<<<<<<<<”
+echo ">>>>>>>>>>> Download nodejs Repos <<<<<<<<<"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-echo “>>>>>>>>>>> Install Nodejs <<<<<<<<<”
+echo ">>>>>>>>>>> Install Nodejs <<<<<<<<<"
 yum install nodejs -y
 
-echo “>>>>>>>>>>> Create Application User <<<<<<<<<”
+echo ">>>>>>>>>>> Create Application User <<<<<<<<<"
 useradd roboshop
 
-echo “>>>>>>>>>>> Removing exisiting data <<<<<<<<<”
+echo ">>>>>>>>>>> Removing exisiting data <<<<<<<<<"
 rm -rf /app
 
-echo “>>>>>>>>>>> Creating the Application Directory  <<<<<<<<<”
+echo ">>>>>>>>>>> Creating the Application Directory  <<<<<<<<<"
 mkdir /app
 
-echo “>>>>>>>>>>> Download Application Content <<<<<<<<<”
+echo ">>>>>>>>>>> Download Application Content <<<<<<<<<"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 
-echo “>>>>>>>>>>> Extract Application Content <<<<<<<<<”
+echo ">>>>>>>>>>> Extract Application Content <<<<<<<<<"
 cd /app
 unzip /tmp/catalogue.zip
 cd /app
 
-echo “>>>>>>>>>>> Download Nodejs Dependencies  <<<<<<<<<”
+echo ">>>>>>>>>>> Download Nodejs Dependencies  <<<<<<<<<"
 npm install
 
 echo “>>>>>>>>>>> Install MongoDB Client <<<<<<<<<”
