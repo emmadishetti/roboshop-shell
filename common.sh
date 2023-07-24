@@ -11,7 +11,7 @@ curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log}
 echo -e  "\e[35m>>>>> Install Nodejs <<<<<<<<<\e[0m"
 yum install nodejs -y &>>${log}
 
-echo -e  "\e[35m>>>>>Create Application User <<<<<<<<<\e[0m"
+echo -e  "\e[35m>>>>> Create Application User <<<<<<<<<\e[0m"
 useradd roboshop &>>${log}
 
 echo -e  "\e[35m>>>>> Removing exisiting data <<<<<<<<<\e[0m"
