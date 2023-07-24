@@ -2,10 +2,10 @@ log=/tmp/roboshop.log
 echo -e  "\e[35m>>>>> ${component} Service <<<<<<<<<\e[0m"
 cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
 
-echo -e  "\e[35m>>>>> ctreate Mongo Repo  <<<<<<<<<"
+echo -e  "\e[35m>>>>> ctreate Mongo Repo  <<<<<<<<<\e[0m"
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>>${log}
 
-echo -e  "\e[35m>>>>> Download nodejs Repos <<<<<<<<<"\e[0m"
+echo -e  "\e[35m>>>>> Download nodejs Repos <<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${log}
 
 echo -e  "\e[35m>>>>> Install Nodejs <<<<<<<<<\e[0m"
