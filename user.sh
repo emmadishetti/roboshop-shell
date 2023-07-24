@@ -17,6 +17,7 @@ npm install
 yum install mongodb-org-shell -y
 mongo --host mongodb.devops7874.online </app/schema/user.js
 
+
 systemctl daemon-reload
 systemctl enable user
 systemctl restart user
