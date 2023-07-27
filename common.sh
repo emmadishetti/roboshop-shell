@@ -1,4 +1,6 @@
 log=/tmp/roboshop.log
+func_nodejs() {
+
 echo -e  "\e[35m>>>>> ${component} Service <<<<<<<<<\e[0m"
 cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
 
@@ -49,3 +51,5 @@ systemctl restart ${component} &>>${log}
 
 
 
+
+}
